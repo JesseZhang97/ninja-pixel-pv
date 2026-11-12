@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "bash scripts/build.sh",
-    "render": "node render.js --page film9.html --range 0:4774 --workers 6 --out frames",
+    "render": "node render.js --page film9.html --range 0:4774 --workers 7 --out frames",
     "audit": "node tools/film_audit9.js film9.html audit.json 1"
   }
 }

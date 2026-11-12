@@ -31,7 +31,7 @@ if [[ ! -d node_modules/puppeteer-core ]]; then
   fi
 fi
 
-WORKERS="${WORKERS:-$(command -v nproc >/dev/null && nproc || echo 6)}"
+WORKERS="${WORKERS:-7}"  # v9 was rendered with 7 workers; other counts drift a few frames
 OUT="${OUT:-out/ninja_pv.mp4}"
 FRAMES="${FRAMES:-frames}"
 mkdir -p "$FRAMES" "$(dirname "$OUT")"

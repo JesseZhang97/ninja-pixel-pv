@@ -23,13 +23,13 @@ npm ci
 ./scripts/build.sh
 ```
 
-输出 `out/ninja_pv.mp4`。可用 `WORKERS=8`、`CHROME_PATH=...`、`OUT=...` 覆盖默认值。
+输出 `out/ninja_pv.mp4`。默认 `WORKERS=7`，与当时渲染 v9 的方式相同。同一浏览器页里连续画多帧时会留下一点绘制状态，所以 worker 数量必须是 7，才能和 `renders/frames_v9` 逐帧一致。可用 `CHROME_PATH=...`、`OUT=...` 覆盖默认路径。
 
 分步也可以：
 
 ```bash
 npm ci
-node render.js --page film9.html --range 0:4774 --workers 6 --out frames
+node render.js --page film9.html --range 0:4774 --workers 7 --out frames
 ffmpeg -y -framerate 30 -i frames/f%05d.png -i audio/ninja_audio_m14c.wav \
   -c:v libx264 -preset slow -crf 16 -tune animation -pix_fmt yuv420p \
   -c:a aac -b:a 256k -ar 48000 -ac 2 -shortest -movflags +faststart \
