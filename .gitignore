@@ -1,0 +1,7 @@
+node_modules/
+frames/
+out/
+audit.json
+*.mp4
+.DS_Store
+Thumbs.db

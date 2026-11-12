@@ -1,0 +1,17 @@
+{
+  "name": "ninja-pv",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "^25.16.0"
+  },
+  "description": "Jay Chou Ninja 8-bit pixel PV (v9) \u2014 private rebuildable source",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "render": "node render.js --page film9.html --range 0:4774 --workers 6 --out frames",
+    "audit": "node tools/film_audit9.js film9.html audit.json 1"
+  }
+}
