@@ -5,3 +5,11 @@ audit.json
 *.mp4
 .DS_Store
 Thumbs.db
+audio/*.mp3
+audio/*.wav
+audio/*.flac
+audio/*.m4a
+audio/*.ogg
+audio/*.aac
+audio/*.aiff
+audio/*.wma
